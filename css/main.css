@@ -1,0 +1,13 @@
+body{
+	background-color: #675634;
+}
+
+.main-div{
+	margin-top:150px;
+	background-color: #346756;
+	min-width: 400px;
+	padding-top: 80px;
+	padding-bottom: 80px;
+  border-radius: 20px;
+}
+
