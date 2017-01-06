@@ -1,7 +1,8 @@
 var x = document.getElementById("demo");
+var http = new XMLHttpRequest();
 
 $(document).ready(function(){
-	getLocation();
+	//getLocation();
 
 	document.getElementById("send").addEventListener("click", function(){
 		send();
@@ -31,5 +32,8 @@ function showPosition(position) {
 function send(){
 	var lat = 40.714224;
 	var lng = -73.961452;
-	console.log(window.open("http://maps.googleapis.com/maps/api/geocode/json?latlng=" + lat + "," + lng + "&sensor=true"));
+	var data;
+  $.post("http://maps.googleapis.com/maps/api/geocode/json?latlng=" + lat + "," + lng + "&sensor=true", function(data){
+      alert("Data: " + data.results[0].address_components[0].long_name);
+  });
 }
