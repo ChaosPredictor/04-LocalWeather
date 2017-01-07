@@ -35,13 +35,17 @@ function showPosition(lat,lng) {
 }
 
 function showAddress(data) {
-	$("#formatted-address").text(data.results[1].formatted_address);
-	showWeather();
+	var location  = data.results[1].formatted_address;
+	$("#formatted-address").text(location);
+	showWeather(location);
 }
 
-function showWeather() {
-  $.simpleWeather({
-    location: 'Tel Aviv-Yafo, IL',
+function showWeather(location) {
+	//console.log(location);
+  $.simpleWeather({		
+    //location: 'Tel Aviv-Yafo, IL',
+    //location: 'Tel Aviv-Yafo, Israel',
+    location: location,
     woeid: '',
     unit: 'f',
     success: function(weather) {
@@ -51,6 +55,7 @@ function showWeather() {
     },
     error: function(error) {
       $("#weather-temp").html('<p> Error: '+error+'</p>');
+			window.setTimeout(showWeather(location), 5000);
     }
   })
 }
