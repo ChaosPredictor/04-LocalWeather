@@ -35,7 +35,7 @@ function showPosition(lat,lng) {
 }
 
 function showAddress(data) {
-	$("#formatted-address").text("Address: " + data.results[1].formatted_address);
+	$("#formatted-address").text(data.results[1].formatted_address);
 	showWeather();
 }
 
@@ -45,11 +45,12 @@ function showWeather() {
     woeid: '',
     unit: 'f',
     success: function(weather) {
-      html = '<p>'+weather.temp+'&deg;'+weather.units.temp+'</p>';
-      $("#weather").html(html);
+      //html = '<p>'+weather.temp+'&deg;'+weather.units.temp+'</p>';
+      $("#weather-temp").html('<p>'+weather.temp+'&deg;'+weather.units.temp+'</p>');
+			$("#weather-wind").html('<p><strong>Wind</strong>: '+weather.wind.direction+' '+weather.wind.speed+' '+weather.units.speed+'</p>');
     },
     error: function(error) {
-      $("#weather").html('<p> Error: '+error+'</p>');
+      $("#weather-temp").html('<p> Error: '+error+'</p>');
     }
   })
 }
