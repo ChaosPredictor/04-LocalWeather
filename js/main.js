@@ -30,8 +30,8 @@ function usePosition(lat,lng) {
 
 
 function showPosition(lat,lng) {
-	$("#demo-latitude").text("Latitude: " + lat);	
-	$("#demo-longitude").text("Longitude: " + lng);
+	//$("#demo-latitude").text("Latitude: " + lat);	
+	//$("#demo-longitude").text("Longitude: " + lng);
 }
 
 function showAddress(data) {
@@ -47,15 +47,19 @@ function showWeather(location) {
     //location: 'Tel Aviv-Yafo, Israel',
     location: location,
     woeid: '',
-    unit: 'f',
+    unit: 'c',
     success: function(weather) {
       //html = '<p>'+weather.temp+'&deg;'+weather.units.temp+'</p>';
       $("#weather-temp").html('<p>'+weather.temp+'&deg;'+weather.units.temp+'</p>');
+      $("#weather-icon").html('<img src="'+weather.thumbnail+'">');
 			$("#weather-wind").html('<p><strong>Wind</strong>: '+weather.wind.direction+' '+weather.wind.speed+' '+weather.units.speed+'</p>');
+			//var html = '<p><strong><a href="http://www.jqueryscript.net/tags.php?/Thumbnail/">Thumbnail</a></strong>: <img src="'+weather.thumbnail+'"></p>';
+			var html = '<p><strong>Currently</strong>: '+weather.currently;
+			$("#weather").html(html);
     },
     error: function(error) {
       $("#weather-temp").html('<p> Error: '+error+'</p>');
-			window.setTimeout(showWeather(location), 5000);
+			window.setTimeout(showWeather(location), 1000);
     }
   })
 }
