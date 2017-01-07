@@ -3,35 +3,37 @@ var http = new XMLHttpRequest();
 var lat,lng;
 
 $(document).ready(function(){
-	getLocation();
+	getLocation(usePosition);
 
-	document.getElementById("send").addEventListener("click", function(){
+	//document.getElementById("send").addEventListener("click", function(){
 
-		showPosition(lat,lng);
-		googleGeocodeAPI(lat,lng);	});
+		//showPosition(lat,lng);
+		//googleGeocodeAPI(lat,lng);	});
 });
 
-function getLocation() {
+function getLocation(callback) {
 	navigator.geolocation.getCurrentPosition(function(location) {
 		if (location.coords) {
-			//console.log(location.coords.latitude);
-  		//console.log(location.coords.longitude);
-  		//console.log(location.coords.accuracy);
-			//showPosition(location.coords);
 			lat = location.coords.latitude;
 			lng = location.coords.longitude;
+			callback(lat,lng);
 		} else {
 			x.innerHTML = "Geolocation is not supported by this browser.";
 		}
 	});
 };
 
+function usePosition(lat,lng) {
+	showPosition(lat,lng);
+	var data = googleGeocodeAPI(lat,lng);
+	
+}
+
 
 function showPosition(lat,lng) {
 	$("#demo-latitude").text("Latitude: " + lat);	
 	$("#demo-longitude").text("Longitude: " + lng);
 }
-
 
 function googleGeocodeAPI(lat,lng){
 	//var lat = 40.714224;
