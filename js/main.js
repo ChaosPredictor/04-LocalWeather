@@ -35,10 +35,24 @@ function showPosition(lat,lng) {
 }
 
 function showAddress(data) {
-	$("#formatted-address").text("Formatted Address: " + data.results[1].formatted_address);	
+	$("#formatted-address").text("Address: " + data.results[1].formatted_address);
+	showWeather();
 }
 
-
+function showWeather() {
+  $.simpleWeather({
+    location: 'Tel Aviv-Yafo, IL',
+    woeid: '',
+    unit: 'f',
+    success: function(weather) {
+      html = '<p>'+weather.temp+'&deg;'+weather.units.temp+'</p>';
+      $("#weather").html(html);
+    },
+    error: function(error) {
+      $("#weather").html('<p> Error: '+error+'</p>');
+    }
+  })
+}
 
 function googleGeocodeAPI(lat,lng,callback){
 	//var lat = 40.714224;

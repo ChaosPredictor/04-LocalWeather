@@ -8,15 +8,23 @@
 		<link rel="stylesheet" href="css/main.css">
 
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+		<!--script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js" charset="utf-8"></script>
+		<script src="jquery.simpleWeather.js" charset="utf-8"></script-->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.simpleWeather/3.1.0/jquery.simpleWeather.min.js"></script>
     <!--script src="vendor/bootstrap/js/bootstrap.min.js"></script>
     <script src="js/agency.min.js"></script-->
 		<script src="js/main.js"></script> 
 	</head>
 	<body>
 		<div class="col-md-6 col-md-offset-3 main-div">
-			<p id="demo-latitude"></p>
-			<p id="demo-longitude"></p>
-			<p id="formatted-address"></p>
+			<div class="col-md-4">
+				<p id="demo-latitude"></p>
+				<p id="demo-longitude"></p>
+				<p id="formatted-address"></p>
+			</iv>
+			<div class="col-md-4">
+				<div id="weather"></div>
+			</div>
 			<div class="col-md-6 pull-right">
 				<button id="send" type="button" class="btn btn-default">Refresh</button>
 			</div>
