@@ -52,9 +52,7 @@ function showWeather(location) {
       //html = '<p>'+weather.temp+'&deg;'+weather.units.temp+'</p>';
       $("#weather-temp").html('<p>'+weather.temp+'&deg;'+weather.units.temp+'</p>');
       $("#weather-icon").html('<img src="'+weather.thumbnail+'">');
-			$("#weather-wind").html('<p>'+weather.wind.direction+' '+weather.wind.speed+' '+weather.units.speed+'</p>');
-			//var html = '<p><strong><a href="http://www.jqueryscript.net/tags.php?/Thumbnail/">Thumbnail</a></strong>: <img src="'+weather.thumbnail+'"></p>';
-			//var html = '<p><strong>Currently</strong>: '+weather.currently;
+			$("#weather-wind").html('<p>'+weather.wind.direction+' '+Math.round(weather.wind.speed)+' '+weather.units.speed+'</p>');
 			$("#weather-curr").html('<p>'+weather.currently+'</p>');
     },
     error: function(error) {
