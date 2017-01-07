@@ -25,8 +25,7 @@ function getLocation(callback) {
 
 function usePosition(lat,lng) {
 	showPosition(lat,lng);
-	var data = googleGeocodeAPI(lat,lng);
-	
+	googleGeocodeAPI(lat,lng,showAddress);
 }
 
 
@@ -35,13 +34,20 @@ function showPosition(lat,lng) {
 	$("#demo-longitude").text("Longitude: " + lng);
 }
 
-function googleGeocodeAPI(lat,lng){
+function showAddress(data) {
+	$("#formatted-address").text("Formatted Address: " + data.results[1].formatted_address);	
+}
+
+
+
+function googleGeocodeAPI(lat,lng,callback){
 	//var lat = 40.714224;
 	//var lng = -73.961452;
 	//var data;
   $.post("http://maps.googleapis.com/maps/api/geocode/json?latlng=" + lat + "," + lng + "&sensor=true", function(data){
-		console.log(data);		
-		return data;      
+		//console.log(data);		
+		//return data; 
+		callback(data);     
 		//alert("Data: " + data.results[0].address_components[0].long_name);
   });
 }
