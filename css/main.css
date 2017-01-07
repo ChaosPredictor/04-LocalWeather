@@ -11,3 +11,16 @@ body{
   border-radius: 20px;
 }
 
+#weather-temp{
+	font-size:36px;
+}
+
+
+.mid-part {
+	margin:30px;
+}
+
+
+.btm-part {
+	margin:30px;
+}

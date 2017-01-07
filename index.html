@@ -17,7 +17,7 @@
 	</head>
 	<body>
 		<div class="col-md-6 col-md-offset-3 main-div">
-			<div class="col-md-12">
+			<div class="col-md-12 top-part">
 				<div class="col-md-3 col-md-offset-3">
 					<div id="weather-temp"></div>
 				</div>
@@ -25,7 +25,7 @@
 					<div id="weather-icon"></div>
 				</div>
 			</div>
-			<div class="col-md-12">
+			<div class="col-md-12 mid-part">
 				<div class="col-md-4">
 					<!--p id="demo-latitude"></p>
 					<p id="demo-longitude"></p-->
@@ -37,9 +37,14 @@
 				<div class="col-md-4">
 					<div id="weather-curr"></div>
 				</div>
-			</div>			
-			<div class="col-md-6 pull-right">
-				<button id="send" type="button" class="btn btn-default">Refresh</button>
+			</div>	
+			<div class="col-md-12 btm-part">
+				<div class="col-md-4 col-md-offset-2">
+					<button id="refresh" type="button" class="btn btn-default">Refresh</button>
+				</div>
+				<div class="col-md-4">
+					<button id="change" type="button" class="btn btn-default">to Fahrenheit</button>
+				</div>
 			</div>
 		</div>
 	</body>
