@@ -58,38 +58,36 @@ function showWeather(location) {
 }
 
 function changeBackgroundImage(curr) {
-  console.log(curr);	
 	switch(curr) {
 	case "Blowing Snow":
-		$('body').css('background-image','url(../img/Blowing-Snow.jpg)');
+		$('body').css('background-image','url(img/Blowing-Snow.jpg)');
 		break;
 	case "Breezy":
-		$('body').css('background-image','url(../img/Breezy.jpg)');
+		$('body').css('background-image','url(img/Breezy.jpg)');
 		break;
 	case "Clear":
-		$('body').css('background-image','url(../img/Clear.jpg)');
+		$('body').css('background-image','url(img/Clear.jpg)');
 		break;
 	case "Cloudy":
-		$('body').css('background-image','url(../img/Cloudy.jpg)');
+		$('body').css('background-image','url(img/Cloudy.jpg)');
 		break;
 	case "Mostly Sunny":
-		$('body').css('background-image','url(../img/Mostly-Sunny.jpg)');
+		$('body').css('background-image','url(img/Mostly-Sunny.jpg)');
 		break;
 	case "Partly Cloudy":
-	  console.log("this was run!");
 		$('body').css('background-image','url(img/Partly-Cloudy.jpg)');
 		break;
 	case "Partly Cloudy":
-		$('body').css('background-image','url(../img/Partly-Cloudy.jpg)');
+		$('body').css('background-image','url(img/Partly-Cloudy.jpg)');
 		break;
 	case "Rain":
-		$('body').css('background-image','url(../img/Rain.jpg)');
+		$('body').css('background-image','url(img/Rain.jpg)');
 		break;
 	case "Snow":
-		$('body').css('background-image','url(../img/Snow.jpg)');
+		$('body').css('background-image','url(img/Snow.jpg)');
 		break;
 	case "Snow Showers":
-		$('body').css('background-image','url(../img/Snow-Showers.jpg)');
+		$('body').css('background-image','url(img/Snow-Showers.jpg)');
 		break;
 	default:
 		$('body').css('background-color','red');
