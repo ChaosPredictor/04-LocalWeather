@@ -6,7 +6,7 @@ $(document).ready(function(){
 	getLocation(usePosition);
 
 	document.getElementById("refresh").addEventListener("click", function(){
-			
+		getLocation(usePosition);
 	});
 });
 
@@ -51,7 +51,8 @@ function showWeather(location) {
 			changeBackgroundImage(weather.currently);
     },
     error: function(error) {
-      $("#weather-temp").html('<p> Error: '+error+'</p>');
+			console.log('Error: '+error);
+      $("#weather-temp").html('<p>Please wait</p>');
 			window.setTimeout(showWeather(location), 1000);
     }
   })
