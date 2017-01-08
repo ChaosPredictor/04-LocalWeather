@@ -18,8 +18,12 @@ $(document).ready(function(){
 function change() {
 	if (temp === 'c') {
 		temp = 'f';
+		$('#change').text("to Celsius");
+		$('#change').prop('disabled', true);
 	} else {
 		temp = 'c'
+		$('#change').text("to Fahrenheit");
+		$('#change').prop('disabled', true);
 	}
 }
 
@@ -62,6 +66,7 @@ function showWeather(location) {
 			$("#weather-wind").html('<p>'+weather.wind.direction+' '+Math.round(weather.wind.speed)+' '+weather.units.speed+'</p>');
 			$("#weather-curr").html('<p>'+weather.currently+'</p>');
 			changeBackgroundImage(weather.currently);
+			$('#change').prop('disabled', false);
     },
     error: function(error) {
 			console.log('Error: '+error);
