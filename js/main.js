@@ -1,6 +1,7 @@
 var x = document.getElementById("demo");
 var http = new XMLHttpRequest();
 var lat,lng;
+var temp = 'c';
 
 $(document).ready(function(){
 	getLocation(usePosition);
@@ -8,7 +9,19 @@ $(document).ready(function(){
 	document.getElementById("refresh").addEventListener("click", function(){
 		getLocation(usePosition);
 	});
+	document.getElementById("change").addEventListener("click", function(){
+		change();		
+		usePosition(lat,lng);
+	});
 });
+
+function change() {
+	if (temp === 'c') {
+		temp = 'f';
+	} else {
+		temp = 'c'
+	}
+}
 
 function getLocation(callback) {
 	navigator.geolocation.getCurrentPosition(function(location) {
@@ -42,7 +55,7 @@ function showWeather(location) {
   $.simpleWeather({		
     location: location,
     woeid: '',
-    unit: 'c',
+    unit: temp,
     success: function(weather) {
       $("#weather-temp").html('<p>'+weather.temp+'&deg;'+weather.units.temp+'</p>');
       $("#weather-icon").html('<img src="'+weather.thumbnail+'">');
