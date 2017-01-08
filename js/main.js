@@ -4,26 +4,34 @@ var lat,lng;
 var temp = 'c';
 
 $(document).ready(function(){
+	changeDisabilityButtons(true);
 	getLocation(usePosition);
 
 	document.getElementById("refresh").addEventListener("click", function(){
+		changeDisabilityButtons(true);
 		getLocation(usePosition);
 	});
 	document.getElementById("change").addEventListener("click", function(){
+		changeDisabilityButtons(true);		
 		change();		
 		usePosition(lat,lng);
 	});
 });
 
+
+function changeDisabilityButtons(state){
+	$('#change').prop('disabled', state);
+	$('#refresh').prop('disabled', state);
+}
+
+
 function change() {
 	if (temp === 'c') {
 		temp = 'f';
 		$('#change').text("to Celsius");
-		$('#change').prop('disabled', true);
 	} else {
 		temp = 'c'
 		$('#change').text("to Fahrenheit");
-		$('#change').prop('disabled', true);
 	}
 }
 
@@ -66,7 +74,7 @@ function showWeather(location) {
 			$("#weather-wind").html('<p>'+weather.wind.direction+' '+Math.round(weather.wind.speed)+' '+weather.units.speed+'</p>');
 			$("#weather-curr").html('<p>'+weather.currently+'</p>');
 			changeBackgroundImage(weather.currently);
-			$('#change').prop('disabled', false);
+			changeDisabilityButtons(false);
     },
     error: function(error) {
 			console.log('Error: '+error);
