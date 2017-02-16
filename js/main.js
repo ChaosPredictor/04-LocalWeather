@@ -7,6 +7,8 @@ $(document).ready(function(){
 	changeDisabilityButtons(true);
 	getLocation(usePosition);
 
+	
+
 	document.getElementById("refresh").addEventListener("click", function(){
 		changeDisabilityButtons(true);
 		getLocation(usePosition);
@@ -66,6 +68,7 @@ function showWeather(location) {
 
   $.simpleWeather({		
     location: location,
+		//location: 'Bermuda',
     woeid: '',
     unit: temp,
     success: function(weather) {
@@ -98,11 +101,11 @@ function changeBackgroundImage(curr) {
 	case "Cloudy":
 		$('body').css('background-image','url(img/Cloudy.jpg)');
 		break;
+	case "Mostly Clear":
+		$('body').css('background-image','url(img/Mostly-Clear.jpg)');
+		break;	
 	case "Mostly Sunny":
 		$('body').css('background-image','url(img/Mostly-Sunny.jpg)');
-		break;
-	case "Partly Cloudy":
-		$('body').css('background-image','url(img/Partly-Cloudy.jpg)');
 		break;
 	case "Partly Cloudy":
 		$('body').css('background-image','url(img/Partly-Cloudy.jpg)');
@@ -115,6 +118,9 @@ function changeBackgroundImage(curr) {
 		break;
 	case "Snow Showers":
 		$('body').css('background-image','url(img/Snow-Showers.jpg)');
+		break;
+	case "Sunny":
+		$('body').css('background-image','url(img/Sunny.jpg)');
 		break;
 	default:
 		$('body').css('background-color','red');
