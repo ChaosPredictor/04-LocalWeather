@@ -33,15 +33,16 @@ This project is under BSD-3-Clause license.
 ## ToDo
 
 Add images to:
-Mostly Clear
-Sunny
-Mostly Cloudy
+None
 weather types
 
 # Done
 
 Images to:
+Mostly Cloudy
 Blowing Snow
+Mostly Clear
+Sunny
 Mostly Sunny
 Partly Cloudy
 Cloudy

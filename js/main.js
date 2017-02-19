@@ -104,6 +104,9 @@ function changeBackgroundImage(curr) {
 	case "Mostly Clear":
 		$('body').css('background-image','url(img/Mostly-Clear.jpg)');
 		break;	
+	case "Mostly Cloudy":
+		$('body').css('background-image','url(img/Mostly-Cloudy.jpg)');
+		break;	
 	case "Mostly Sunny":
 		$('body').css('background-image','url(img/Mostly-Sunny.jpg)');
 		break;
