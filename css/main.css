@@ -4,11 +4,11 @@ body{
 }
 
 .main-div{
-	margin-top:150px;
+	margin-top:130px;
 	background-color: rgba(34,67,56,0.5);
 	min-width: 400px;
-	padding-top: 80px;
-	padding-bottom: 80px;
+	padding-top: 30px;
+	padding-bottom: 30px;
   border-radius: 20px;
 }
 
@@ -31,3 +31,20 @@ body{
 .btm-part {
 	margin:30px;
 }
+
+footer {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 1rem;    
+	font-weight: bold;
+	//color: white;
+ // background-color: #efefef;
+ // text-align: center;
+}
+
+a:link {color: red; text-decoration: none; font-weight: bold; !important}
+a:active {color: red; text-decoration: none; font-weight: bold;  !important}
+a:visited {color: red; text-decoration: none; font-weight: bold; !important}
+a:hover {color: red; text-decoration: none; font-weight: bold; !important}
